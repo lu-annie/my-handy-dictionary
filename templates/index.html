@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="/results" method="post">
+    <p>
+        <label for="word">What word would you like to search?</label><br>
+        <input type="text" name="word" id="word">
+    </p>
+<p><input type="submit" value="ENTER"></p>
+</form>
+{% endblock %}

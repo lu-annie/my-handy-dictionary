@@ -1,0 +1,3 @@
+Sign up for an API key at https://serpapi.com/dashboard
+
+Create an account and go to "Your Account" and "Api Key" on the left to access your API key

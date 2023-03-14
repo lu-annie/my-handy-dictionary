@@ -6,7 +6,8 @@
    </form>
    <html>
     <body>
-        {% if None %}
+        <header>(Note some words may have multiple meanings. Our dictionary currently only supports the most common meaning of each word.)</header>
+        {% if word|length == 0 %}
         {{word}} does not exist. Please check your spelling and try again.
         <br>
         {% else %}
@@ -14,6 +15,7 @@
         <header>Pronunciation: {{phonetics}}</header>
         <header>Part of Speech: {{partofspeech}}</header>
         <header>Definition: {{definition}}</header>
+        <header>Image: {{image}}</header>
         {% endif %}
 </ul>
     </body>

@@ -25,12 +25,3 @@ def results():
         return render_template("results.html", word=word, phonetics=phonetics, partofspeech=partofspeech, definition=definition)
     else:
         return "Wrong HTTP method", 400
-    
-# view function for saved words
-
-@app.route("/mysavedwords", methods=["GET","POST"])
-def saved():
-    if request.method == "POST":
-        return render_template("saved.html")
-    else:
-        return "Wrong HTTP method", 400

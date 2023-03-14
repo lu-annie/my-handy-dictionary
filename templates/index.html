@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="container">
 <form action="/results" method="post">
     <p>
         <label for="word">What word would you like to search?</label><br>
@@ -7,7 +8,5 @@
     </p>
 <p><input type="submit" value="SEARCH"></p>
 </form>
-<form action="/mysavedwords" method="post">
-<p><input type="submit" value="My Saved Words"></p>
-</form>
+</div>
 {% endblock %}

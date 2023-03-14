@@ -11,7 +11,6 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     return render_template("index.html")
-    
 
 # Create a view function for /results
 
@@ -19,8 +18,19 @@ def index():
 def results():
     if request.method == "POST":
         word = request.form["word"]
-        results = functions.write_definition(word)
+        phonetics = functions.get_phonetics(word)
+        partofspeech = functions.get_pos(word)
+        definition = functions.get_definition(word)
         #return "Results that are close to {}".format(place)
-        return render_template("results.html", results=results, word=word)
+        return render_template("results.html", word=word, phonetics=phonetics, partofspeech=partofspeech, definition=definition)
+    else:
+        return "Wrong HTTP method", 400
+    
+# view function for saved words
+
+@app.route("/mysavedwords", methods=["GET","POST"])
+def saved():
+    if request.method == "POST":
+        return render_template("saved.html")
     else:
         return "Wrong HTTP method", 400

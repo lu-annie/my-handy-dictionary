@@ -33,19 +33,31 @@ def get_dictionary_phrase(word, formatted=0):
 #list with data from API call
 pprint.pprint(get_dictionary_phrase(word='hello'))
 
+# function to get phonetics of word
+def get_phonetics(word):
+    return str(get_dictionary_phrase(word=word)[0]['phonetic'])
+
+# function to get part of speech
+def get_pos(word):
+    return str(get_dictionary_phrase(word=word)[0]['meanings'][0]['partOfSpeech'])
+
+# function to get definition of word
+def get_definition(word):
+    return str(get_dictionary_phrase(word=word)[0]['meanings'][0]['definitions'][0]['definition'])
+
 # function to print definition
-def write_definition(word):
-    print(word + " (" + str(get_dictionary_phrase(word=word)[0]['meanings'][0]['partOfSpeech']) + ") " + str(get_dictionary_phrase(word=word)[0]['meanings'][0]['definitions'][0]['definition']))
+def save_definition(word):
+    return str(word + " (" + get_pos(word) + ") " + get_definition(word))
 
 #test code
-write_definition('hello')
-write_definition('brother')
-write_definition('run')
+#write_definition('hello')
+#write_definition('brother')
+#write_definition('run')
 
 # test if word exists
 def write_definition_safe(word):
     try:
-        write_definition(word)
+        save_definition(word)
     except urllib.error.HTTPError as e:
         print('Word does not exist. Please make sure your spelling is correct.')
 
@@ -53,6 +65,6 @@ def write_definition_safe(word):
 write_definition_safe('bluj')
 
 # pt 2.4
-print('Search up a word and its definition:')
-x = input()
-write_definition_safe(x)
+#print('Search up a word and its definition:')
+#x = input()
+#write_definition_safe(x)

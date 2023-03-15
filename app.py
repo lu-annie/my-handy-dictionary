@@ -35,5 +35,6 @@ def results():
         partofspeech = functions.get_pos(word)
         definition = functions.get_definition(word)
         return render_template("results.html", word=word, phonetics=phonetics, partofspeech=partofspeech, definition=definition, images_result_link=images_result_link)
+        #return render_template("results.html", word=word, word_info=word_info, images_result_link=images_result_link)
     else:
         return render_template("get.html")

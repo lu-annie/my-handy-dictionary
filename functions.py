@@ -33,6 +33,10 @@ def get_dictionary_phrase(word, formatted=0):
 #list with data from API call
 pprint.pprint(get_dictionary_phrase(word='hello'))
 
+def get_word(word):
+    return str(get_dictionary_phrase(word=word)[0]['word'])
+
+pprint.pprint(get_word(word='hello'))
 # function to get phonetics of word
 def get_phonetics(word):
     return str(get_dictionary_phrase(word=word)[0]['phonetic'])
@@ -45,24 +49,18 @@ def get_pos(word):
 def get_definition(word):
     return str(get_dictionary_phrase(word=word)[0]['meanings'][0]['definitions'][0]['definition'])
 
-# function to print definition
-def save_definition(word):
-    return str(word + " (" + get_pos(word) + ") " + get_definition(word))
-
 #test code
 #write_definition('hello')
 #write_definition('brother')
 #write_definition('run')
 
 # test if word exists
-def write_definition_safe(word):
-    try:
-        get_dictionary_phrase(word=word)
-    except urllib.error.HTTPError as e:
-        return 'does not exist. Please make sure your spelling is correct.'
+def test_word(word):
+    if urllib.error.HTTPError:
+        return word + ' does not exist. Please make sure your spelling is correct.'
 
 #test for nonexistent words
-write_definition_safe('bluj')
+test_word('bluj')
 
 # pt 2.4
 #print('Search up a word and its definition:')

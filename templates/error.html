@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+   <html>
+    <body>
+        <br>
+        <header class="text-center">{{word}} does not exist. Please check your spelling.</header>
+        <br>
+<form class="text-center">
+    <input type="button" value="Back" onclick="history.back()">
+   </form>
+<br>
+{% endblock %}

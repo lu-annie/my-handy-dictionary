@@ -19,22 +19,25 @@ def index():
 @app.route("/results", methods=["GET","POST"])
 def results():
     if request.method == "POST":
-        word = request.form["word"]
+        try:
+            word = request.form["word"]
         
-        params = {
-        "q": word,
-        "tbm": "isch",
-        "ijn": "0",
-        "api_key": keys.MY_SECRET_API_KEY_1
-        }
+            params = {
+            "q": word,
+            "tbm": "isch",
+            "ijn": "0",
+            "api_key": keys.MY_SECRET_API_KEY_1
+            }
 
-        search = GoogleSearch(params)
-        results = search.get_dict()
-        images_result_link = results["images_results"][0]['thumbnail']
-        phonetics = functions.get_phonetics(word)
-        partofspeech = functions.get_pos(word)
-        definition = functions.get_definition(word)
-        return render_template("results.html", word=word, phonetics=phonetics, partofspeech=partofspeech, definition=definition, images_result_link=images_result_link)
+            search = GoogleSearch(params)
+            results = search.get_dict()
+            images_result_link = results["images_results"][0]['thumbnail']
+            phonetics = functions.get_phonetics(word)
+            partofspeech = functions.get_pos(word)
+            definition = functions.get_definition(word)
+            return render_template("results.html", word=word, phonetics=phonetics, partofspeech=partofspeech, definition=definition, images_result_link=images_result_link)
+        except functions.urllib.error.HTTPError as e:
+            return render_template("error.html", word=word)
         #return render_template("results.html", word=word, word_info=word_info, images_result_link=images_result_link)
     else:
         return render_template("get.html")

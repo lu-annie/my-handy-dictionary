@@ -1,12 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
+<br>
 <div class="container">
-<form action="/results" method="post">
+<form action="/results" method="post" class="text-center">
     <p>
-        <label for="word" >What word would you like to search?</label><br>
-        <input type="text" name="word" id="word">
+        <label for="word" >What word would you like to search?</label>
+        <br>
+        <input type="text" name="word" id="word" required>
     </p>
 <p><input type="submit"  value="SEARCH"></p>
 </form>
+<br>
 </div>
 {% endblock %}

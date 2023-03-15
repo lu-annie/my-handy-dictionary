@@ -57,9 +57,9 @@ def save_definition(word):
 # test if word exists
 def write_definition_safe(word):
     try:
-        save_definition(word)
+        get_dictionary_phrase(word=word)
     except urllib.error.HTTPError as e:
-        print('Word does not exist. Please make sure your spelling is correct.')
+        return 'does not exist. Please make sure your spelling is correct.'
 
 #test for nonexistent words
 write_definition_safe('bluj')

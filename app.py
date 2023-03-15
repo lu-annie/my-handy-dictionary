@@ -1,5 +1,4 @@
 import functions
-import images
 import keys
 
 from flask import Flask, render_template, request
@@ -30,12 +29,10 @@ def results():
 
         search = GoogleSearch(params)
         results = search.get_dict()
-        images_results = results["images_results"]
+        images_result_link = results["images_results"][0]['thumbnail']
         phonetics = functions.get_phonetics(word)
         partofspeech = functions.get_pos(word)
         definition = functions.get_definition(word)
-        image = images_results
-        #return "Results that are close to {}".format(place)
-        return render_template("results.html", word=word, phonetics=phonetics, partofspeech=partofspeech, definition=definition, image=image)
+        return render_template("results.html", word=word, phonetics=phonetics, partofspeech=partofspeech, definition=definition, images_result_link=images_result_link)
     else:
-        return "Wrong HTTP method", 400
+        return render_template("get.html")

@@ -7,3 +7,5 @@ How to use this app:
 5. In app.py, find "api_key": keys.MY_SECRET_API_KEY_1
 6. Replace MY_SECRET_API_KEY_1 with your API key
 7. Your app is ready to go!
+
+Access the site at https://annielu.pythonanywhere.com/

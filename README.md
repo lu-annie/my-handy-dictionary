@@ -8,4 +8,4 @@ How to use this app:
 6. Replace MY_SECRET_API_KEY_1 with your API key
 7. Your app is ready to go!
 
-Access the site at https://annielu.pythonanywhere.com/
+You can access the site temporarily at https://annielu.pythonanywhere.com/

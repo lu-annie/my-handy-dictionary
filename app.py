@@ -20,6 +20,7 @@ def index():
 def results():
     if request.method == "POST":
         word = request.form["word"]
+        
         params = {
         "q": word,
         "tbm": "isch",

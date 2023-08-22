@@ -1,5 +1,5 @@
 # my-handy-dictionary
-How to use this app:
+How to use the MyHandyDictionary app:
 1. Clone to your computer by clicking the green "Code" button and copying the link
 2. Create a virtual environment and activate it
 3. Type pip install -r requirements.txt
@@ -8,4 +8,4 @@ How to use this app:
 6. Replace MY_SECRET_API_KEY_1 with your API key
 7. Your app is ready to go!
 
-You can access the site temporarily at https://annielu.pythonanywhere.com/
+Watch the video here to learn more about how it works: [https://youtu.be/eSsGoElEVCk](https://youtu.be/eSsGoElEVCk)

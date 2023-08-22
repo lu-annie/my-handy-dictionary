@@ -9,4 +9,5 @@ How to use the MyHandyDictionary app:
 7. Your app is ready to go!
 
 You can access the site at [https://annielu.pythonanywhere.com/](https://annielu.pythonanywhere.com/) (Please let me know if it does not work!)
+
 Watch the video here to learn more about how it works: [https://youtu.be/eSsGoElEVCk](https://youtu.be/eSsGoElEVCk)
